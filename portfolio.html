@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio | Ethan Tooms</title>
+  <meta name="description" content="Projects by Ethan Tooms — network security, web applications, cryptography, and systems programming.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">ethan<span>@</span>tooms<span>:~$</span></a>
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="resume.html">resume</a></li>
+        <li><a class="active" href="portfolio.html">portfolio</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section>
+      <span class="eyebrow">// ls ~/projects</span>
+      <h1>Portfolio</h1>
+      <p class="lead">
+        A selection of my work, led by the projects closest to the security field: a deployed team web
+        application and my network security senior design project.
+      </p>
+    </section>
+
+    <section>
+      <h2>Featured work</h2>
+
+      <!-- ============ CONTACT MANAGER ============ -->
+      <article class="card feature project">
+        <div>
+          <span class="status done">Deployed</span>
+          <h3>Contact Manager Web App</h3>
+          <p>
+            A full-stack contact manager built by a small team on a LAMP stack (Linux, Apache, MySQL, PHP)
+            and deployed on a DigitalOcean server under a custom domain. Users register, log in, and manage
+            their own contacts.
+          </p>
+          <div class="tags">
+            <span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">PHP</span>
+            <span class="tag">MySQL</span><span class="tag">Linux</span><span class="tag">DigitalOcean</span>
+          </div>
+          <div class="links">
+            <a href="https://lamp.contacts-4331.xyz" target="_blank" rel="noopener">→ Live site</a>
+            <a href="https://github.com/ethan-tooms/LAMP_Stack" target="_blank" rel="noopener">→ Source on GitHub</a>
+          </div>
+        </div>
+        <div>
+          <h3>My role</h3>
+          <ul class="clean">
+            <li>Wrote the front-end JavaScript (<code>code.js</code>) containing all client-side functions and API calls</li>
+            <li>Built the application's HTML/CSS pages</li>
+            <li>Defined how the front end talks to the API, which the back-end team implemented against</li>
+          </ul>
+          <h3 style="margin-top:18px">Why it matters for security</h3>
+          <p>
+            Building the client side of a login-protected app meant thinking constantly about trust boundaries:
+            what the browser can be trusted with, how user input and session state move between pages, and
+            exactly what gets sent to the server. Working against an API owned by another team also meant
+            agreeing on a clear contract, the same discipline security reviews depend on.
+          </p>
+        </div>
+      </article>
+
+      <!-- ============ CLOAK ============ -->
+      <!-- Add a GitHub or demo link to Cloak here once the team is ready to share one. -->
+      <article class="card feature project">
+        <div>
+          <span class="status">In progress · Senior Design</span>
+          <h3>Cloak: AI-Driven Network Threat Detection</h3>
+          <p>
+            Cloak is a plug-in network monitoring device. An Orange Pi connected to a network captures live
+            traffic, organizes it into events, and uses machine learning to flag activity that may be malicious.
+            Findings appear on a dashboard where users can review alerts and investigate them with the help
+            of a small language model.
+          </p>
+          <div class="tags">
+            <span class="tag">Network Security</span><span class="tag">Machine Learning</span>
+            <span class="tag">XGBoost</span><span class="tag">Isolation Forest</span>
+            <span class="tag">Half-Space Trees</span><span class="tag">MITRE ATT&amp;CK</span>
+            <span class="tag">Orange Pi</span>
+          </div>
+        </div>
+        <div>
+          <h3>How it works</h3>
+          <ul class="clean">
+            <li><strong>Capture:</strong> the Orange Pi reads network traffic and groups it into events</li>
+            <li><strong>Anomaly detection:</strong> Isolation Forest and Half-Space Trees learn a baseline for each network and flag traffic that deviates from it, catching threats nobody has seen before</li>
+            <li><strong>Known-threat classification:</strong> XGBoost identifies known malicious patterns, such as behavior mapped to MITRE ATT&amp;CK techniques or traffic to known-bad IPs</li>
+            <li><strong>Investigation:</strong> a dashboard surfaces flags and alerts, with an SLM assistant to answer questions and help analysts investigate</li>
+          </ul>
+          <h3 style="margin-top:18px">My role</h3>
+          <p>
+            Flex team member focused on the AI team, working on the machine learning models behind detection
+            and classification.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <h2>More projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Network Packet Analysis</h3>
+          <p>Inspected live traffic in Wireshark, examining TCP/IP behavior, DNS queries, and HTTP vs. HTTPS to interpret real-world communication patterns.</p>
+          <div class="tags"><span class="tag">Wireshark</span><span class="tag">TCP/IP</span><span class="tag">DNS</span></div>
+        </div>
+        <div class="card">
+          <h3>Cryptography Implementation</h3>
+          <p>Implemented symmetric and asymmetric encryption and decryption in Python, then tested each for correctness and efficiency.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Cryptography</span></div>
+        </div>
+        <div class="card">
+          <h3>Concurrent Hash Table</h3>
+          <p>A thread-safe hash table in C with fine-grained locking, stress-tested to rule out race conditions and data corruption.</p>
+          <div class="tags"><span class="tag">C</span><span class="tag">POSIX threads</span></div>
+        </div>
+        <div class="card">
+          <h3>C Compiler</h3>
+          <p>A compiler written in C++ with a custom lexer and parser, symbol handling, and error detection.</p>
+          <div class="tags"><span class="tag">C++</span><span class="tag">Compilers</span></div>
+        </div>
+        <div class="card">
+          <h3>MIPS Processor Simulator</h3>
+          <p>A team-built simulator in C emulating registers, memory, instruction decoding, the ALU, and pipeline behavior.</p>
+          <div class="tags"><span class="tag">C</span><span class="tag">Computer Architecture</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Ethan Tooms</span>
+      <span><a href="mailto:ethantooms@gmail.com">ethantooms@gmail.com</a> · <a href="https://github.com/ethan-tooms">github.com/ethan-tooms</a></span>
+    </div>
+  </footer>
+</body>
+</html>
